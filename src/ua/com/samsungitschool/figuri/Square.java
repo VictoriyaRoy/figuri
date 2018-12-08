@@ -1,5 +1,7 @@
 package ua.com.samsungitschool.figuri;
 
+import java.util.Objects;
+
 public final class Square extends Figure {
     private final int x;
     private Triangle triangle;
@@ -26,5 +28,27 @@ public final class Square extends Figure {
     @Override
     public double getArea() {
         return x * x;
+    }
+
+    @Override
+    public String toString() {
+        return "Square{" +
+                "x=" + x +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Square square1 = (Square) o;
+        return x == square1.x &&
+                Objects.equals(triangle, square1.triangle) &&
+                Objects.equals(square, square1.square);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, triangle, square);
     }
 }

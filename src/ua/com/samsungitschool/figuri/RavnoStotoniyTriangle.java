@@ -9,4 +9,5 @@ public class RavnoStotoniyTriangle extends Triangle {
     public int getX() {
         return x;
     }
+
 }

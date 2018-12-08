@@ -1,5 +1,7 @@
 package ua.com.samsungitschool.figuri;
 
+import java.util.Objects;
+
 public class Trapezium extends Figure {
     private final int a, b, c, d, h;
 
@@ -39,5 +41,33 @@ public class Trapezium extends Figure {
     @Override
     public double getArea() {
         return ((a + c) / 2) * h;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Trapezium trapezium = (Trapezium) o;
+        return a == trapezium.a &&
+                b == trapezium.b &&
+                c == trapezium.c &&
+                d == trapezium.d &&
+                h == trapezium.h;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(a, b, c, d, h);
+    }
+
+    @Override
+    public String toString() {
+        return "Trapezium{" +
+                "a=" + a +
+                ", b=" + b +
+                ", c=" + c +
+                ", d=" + d +
+                ", h=" + h +
+                '}';
     }
 }
